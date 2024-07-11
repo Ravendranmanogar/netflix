@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -38,8 +39,24 @@ class _HomepageState extends State<Homepage>with SingleTickerProviderStateMixin 
               IconButton(onPressed: (){}, icon: const Icon(Icons.search,color: Colors.white,))
             ],
             bottom: TabBar(
+                indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  //color: Colors.white,
+
+                ),
                 controller: _controller,
-                tabs: const[
+                tabs: [
+                  Tab(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          border: Border.all(color: Colors.redAccent, width: 2)),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text("APPS"),
+                      ),
+                    ),
+                  ),
                    Tab(text: "Movies",),
                    Tab(text: "Series",),
                    Tab(text: "Tv Show",),
@@ -54,26 +71,33 @@ class _HomepageState extends State<Homepage>with SingleTickerProviderStateMixin 
             const SystemUiOverlayStyle(statusBarBrightness: Brightness.light),
           ),
 
-        // bottomNavigationBar: AppBar(
-        //   backgroundColor: Colors.grey,
-        //   actions: [
-        //     IconButton(onPressed: (){}, icon: Icon(Icons.home))
-        //   ],
-        // ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+
+        body:  Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // AppBar(
-            //   backgroundColor: Colors.red,
-            //   title: Text("Second appbar"),
-            // ),
-            //HomePage()
+            Tab(
+              child: Container(
+
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height*.06,
+                color:Colors.grey,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(onPressed: (){}, child: Text("Movies",style: TextStyle(color: Colors.white),)),
+                    TextButton(onPressed: (){}, child: Text("Movies",style: TextStyle(color: Colors.white),)),
+                    TextButton(onPressed: (){}, child: Text("Movies",style: TextStyle(color: Colors.white),)),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
+
           //showSelectedLabels: false,
           showUnselectedLabels: false,
-          backgroundColor: Color(0xff303248),
+          backgroundColor: const Color(0xff303248),
           currentIndex: _currentindex,
           onTap: (int NewIndex){
             setState(() {
