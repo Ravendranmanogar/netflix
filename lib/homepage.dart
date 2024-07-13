@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:netflix/screens/downloads.dart';
+import 'package:netflix/screens/favorite.dart';
 import 'package:netflix/screens/home.dart';
 
 class Homepage extends StatefulWidget {
@@ -21,9 +23,9 @@ class _HomepageState extends State<Homepage>with SingleTickerProviderStateMixin 
   int selectedPage = 0;
 
   final _pageOptions = [
-    HomePage(),
-    //InboxScreen(),
-    //SignInScreen()
+    const HomePage(),
+    const FavoritePage(),
+    const DownloadsPage()
   ];
 
   @override
@@ -49,7 +51,7 @@ class _HomepageState extends State<Homepage>with SingleTickerProviderStateMixin 
 
               ),
               controller: _controller,
-              tabs: [
+              tabs: const [
                  Tab(text: "Movies",),
                  Tab(text: "Series",),
                  Tab(text: "Tv Show",),
