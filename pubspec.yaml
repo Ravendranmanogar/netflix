@@ -65,6 +65,8 @@ flutter:
   assets:
     #- assets
     - assets/netfliximage/
+    - assets/movies/
+    - assets/trending/
 
   #   - images/a_dot_ham.jpeg
 
