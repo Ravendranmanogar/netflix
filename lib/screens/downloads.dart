@@ -12,7 +12,7 @@ class DownloadsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Icon(Icons.error,color: Colors.white,size: 150.r,)),
-          Center(child: Text("No Downloads Yet",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp),)),
+          Center(child: Text("No Downloads Yet",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.sp,color: Colors.white),)),
         ],
       ),
 
